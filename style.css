@@ -5,97 +5,320 @@
   
 }
 body{
-    min-height: 100vh;
-    background-image: url("main back.png");
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background-image: url("Resources/main back.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    gap: 20px;
-    overflow-y: auto
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+#main-box{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(58, 0, 0, 0.5);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.page{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#first-page{
+    background: linear-gradient(
+    to bottom,
+    rgba(15, 42, 56, 0.5) 70%,
+    rgba(20, 30, 45, 0.5) 100%
+  );
+}
+#second-page{
+background: linear-gradient(
+    to bottom,
+    rgba(20, 30, 45, 0.5) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+}
+#third-page{
+    background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
 #container{
     display: flex;
-    flex-direction: row;
     align-items: center;
-
-    gap: 5px;
-    padding: 15px;
+    justify-content: center;
+    flex-direction: column;
+    
+    gap: 0.1rem;
+    padding: 0.5rem;
 
     height: 60vh;
     width: 60vw;
 
-    position: relative;
-    top: 15px;
-    left: 15vw;
-    margin: auto;
+    min-width: 350px;
 
-    border: 2px solid rgb(3, 84, 86);
+
+    border: 2px solid rgb(227, 255, 255);
     box-shadow: 0px 4px 12px rgba(3, 84, 86, 0.2);
-    border-radius: 20px;
+    border-radius: 1rem;
     background-color: rgba(44, 52, 70, 0.619);
+    backdrop-filter: blur(1px);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+
+    color: rgb(255, 255, 255);
 }
 #container:hover{
-    border-color: rgba(229, 240, 240, 0.207);
-    box-shadow: 0px 6px 18px rgba(192, 230, 231, 0.301);
-}
-#check-my-work{
-    position: fixed;
-    width: 9vw;
-
-    height: 50vh;
-    bottom: 10vh;
-
-    margin: auto;
-
-    left: 1vw;
-
-    border-radius: 0.7rem; 
-
-    border: 2px solid rgb(3, 84, 86);
-    box-shadow: 0px 1px 4px rgba(6, 104, 86, 0.3);
-      
-    background-color: rgba(131, 181, 151, 0.493);
-
-    overflow-y: auto
+    border-color: rgba(229, 240, 240, 0.494);
+    box-shadow: 0px 0px 1px rgba(192, 230, 231, 0.76);
 }
 
-
-#minecraft-character{                                                    
-    height: auto;
-    width: 100%;
-    object-fit: contain;          
-    pointer-events: none;
-    filter: drop-shadow(0 0 5px #00ffcc) drop-shadow(0 0 15px #00ffcc);
-}
-
-.content-area {
-  display: flex;
-  flex-direction: column;
-
-  padding: 10px;                  
-  color: white;
-  border-radius: 10px;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.622);
+#page1-text{
+    height: 85%;
+    width: 90%;
+    border-radius: 1rem;
+    padding: 2rem;
+    font-size: 1rem;
+    background-color: #ffffff3a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
 }
 
 #character-container{
+    height: 35vh;
+    width: 30vw;
+    min-width: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#minecraft-character{                                                    
+    max-width: 100%;
+    max-height: 100%;    
+    pointer-events: none;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px #00ffcc) drop-shadow(0 0 15px #00ffcc);
+}
+
+#github-link{
+    color: rgb(65, 255, 255);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+#github-link:hover{
+    color: rgb(0, 255, 179);
+}
+
+#my-skills{
+    height: 60%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    background-color: rgba(255, 255, 255, 0.261);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.632), inset 0 0 10px rgba(36, 22, 22, 0.654);
+    border: 1px solid #000000c9;
+}  
+
+.skill-holder{
+    height: 100%;
+    width: 19%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.skill{
+    max-height: 20%;
+    min-height: 0;
+    max-width: 100%;
+    min-width: 0;
+    margin: 8px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.skill-logo{
+    width: 100%;
+    height: 100%;   
+    object-fit: contain;
+    pointer-events: none;
+
+}
+
+
+.project-contener{
+    height: 60%;
+    width: 100%;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    flex-wrap: wrap;
+    cursor: grab;
+    user-select: none;
+
+}
+.project-contener::-webkit-scrollbar {
+    display: none;
+}
+.project-contener:active {
+  cursor: grabbing;
+}
+.project{
+    height: 90%;
+    width: 90%;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+
+    display: block;
+
+    backdrop-filter: blur(1px); 
+    background-color: rgba(0, 0, 0, 0.261);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.632), inset 0 0 10px rgba(36, 22, 22, 0.654);
+    border: 1px solid #000000c9;
+
+    overflow-y: auto;
+}
+.project-img-prevew{
+    float: left;
+    max-height: 70%;
+    max-width: 70%;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 0.5rem;
+}
+.project-name{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0.5rem;
+}
+.project-text{
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    gap: 0.5rem;
+}
+#my-skills-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+#my-skills-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.397);
+    height: 20%;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid rgba(136, 133, 133, 0.3);
+}
+.skill-name{
+    color: rgb(13, 9, 65);
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+.soft-txt{
+    color: rgb(128, 255, 255);
+    font-style: italic;
+    font-weight: bold;
+}
+.hard-txt{
+    color: rgb(167, 255, 229);
+    font-style: italic;
+    font-weight: bold;
+}
+.skill-txt{
+    color: rgb(216, 77, 77);
+    font-weight: 900;
+    font-size: 1.3em;
+}
+.stylish-skill-heading{
+    font-size: 1.5rem;
+    font-family: monospace;
+    text-decoration: underline;
+    text-decoration-color: #04cdff;
+    text-decoration-thickness: 0.1rem;
+    text-decoration-skip-ink: auto;
+    color: rgb(255, 255, 255);
+}
+
+#contract{
+    background-color: rgba(0, 0, 0, 0.397);
+    position: relative;
+    top: 25%;
+    height: 50%;
+    width: 100%;
+    border: 1px solid rgba(136, 133, 133, 0.3);
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+}
+#cp-right{
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    font-style: italic;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#main-contracts{
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.contract-list{
+    height: 100%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    width: 30%;
-    border-radius: 10px;
-    gap: 10px;
+    justify-content: space-evenly;
 }
-
-#first-content{
-    flex: 1;
+.contract-icons-box{
+    height: 30%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.176);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#second-content{
-    height: 100%;
-    width: 70%;
-    background-color: rgba(0, 0, 0, 0.5);
+.contract-icons{
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    pointer-events: none;
 }
